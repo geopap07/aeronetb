@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AeroNetB — Supply Chain Management</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <!-- Login page shown by default -->
+  <div id="login-page" class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="brand-icon">✈</div>
+        <h1>AeroNetB</h1>
+        <p>Aerospace Supply Chain Management</p>
+      </div>
+      <form id="login-form">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="you@aeronetb.com" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="Password123!" required>
+        </div>
+        <div id="login-error" class="error-msg" style="display:none"></div>
+        <button type="submit" class="btn-primary btn-full">Sign In</button>
+      </form>
+      <div class="login-hint">
+        <strong>Demo accounts (password: Password123!)</strong>
+        <div class="demo-accounts">
+          <span class="demo-tag" onclick="fillLogin('alice@aeronetb.com')">Procurement</span>
+          <span class="demo-tag" onclick="fillLogin('ben@aeronetb.com')">Inspector</span>
+          <span class="demo-tag" onclick="fillLogin('clara@aeronetb.com')">Manager</span>
+          <span class="demo-tag" onclick="fillLogin('david@aeronetb.com')">Engineer</span>
+          <span class="demo-tag" onclick="fillLogin('eva@aeronetb.com')">Auditor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main dashboard (hidden until login) -->
+  <div id="dashboard-page" style="display:none">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon-sm">✈</div>
+        <span>AeroNetB</span>
+      </div>
+      <nav id="sidebar-nav"></nav>
+      <div class="sidebar-footer">
+        <div id="user-info"></div>
+        <button class="btn-ghost btn-sm" onclick="logout()">Sign out</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content">
+      <div id="page-container"></div>
+    </main>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/pages/procurement.js"></script>
+<script src="js/pages/inspector.js"></script>
+<script src="js/pages/manager.js"></script>
+<script src="js/pages/engineer.js"></script>
+<script src="js/pages/auditor.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

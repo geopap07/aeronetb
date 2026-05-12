@@ -34,7 +34,7 @@ function showDashboard() {
 
 function fillLogin(email) {
   document.getElementById('login-email').value = email;
-  document.getElementById('login-password').value = 'Password123!';
+  document.getElementById('login-password').value = 'password';
 }
 
 document.getElementById('login-form').addEventListener('submit', async (e) => {
